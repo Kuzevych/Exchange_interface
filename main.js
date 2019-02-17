@@ -5,4 +5,7 @@ fetch('https://api.exchangeratesapi.io/latest')
         return response.json()})
     .then(data=>{
         console.log(data.rates);
+        return data.rates;
     });
+
+
