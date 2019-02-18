@@ -1,6 +1,24 @@
 .main {
-    width: 700px;
+    width: 400px;
+    height: 600px;
     border: 2px solid black;
     margin: auto;
     margin-top: 40px;
+}
+
+.latest__rates-ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px
+}
+
+.historical__rates{
+    display: flex;
+    flex-direction: column;
+}
+
+.historical__rates-result ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px
 }

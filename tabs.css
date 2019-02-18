@@ -8,7 +8,7 @@
     content: "";
     clear: both;
     display: block;
-    height: 240px;
+    /*height: 240px;*/
 }
 .tabs li {
     float: left;
@@ -31,14 +31,13 @@
     user-select: none;
 }
 .tabs li:last-child > label {
-    border-right-width: 1px;
-}
+     border-right-width: 1px;
+ }
 .tabs .tab-content {
     display: none;
     position: absolute;
     left: 0;
     padding: 20px;
-    border: 1px solid #999;
     height: 200px;
     overflow-y: auto;
 }
@@ -49,5 +48,7 @@
     background-color: #999;
 }
 .tabs li > input:checked ~ .tab-content {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
 }
