@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Exchange</title>
-    <link href="tabs.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="style/tabs.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="main">
@@ -15,6 +15,85 @@
             <div class="tab-content calculator">
                 <div class="loading">
                     <img src="img/gif_load.gif">
+                </div>
+                <div class="calculator__input">
+                    <input type="radio" name="gender" value="currentCourse">Current course<br>
+                    <input type="radio" name="gender" value="coursForDate">Cours for date<br>
+                    <br>
+                    Value<input type="number" id=""><br>
+                    <br>
+                    <label>From currency:
+                        <select>
+                            <option> USD</option>
+                            <option> AUD</option>
+                            <option> BGN</option>
+                            <option> BRL</option>
+                            <option> CAD</option>
+                            <option> CHF</option>
+                            <option> CNY</option>
+                            <option> CZK</option>
+                            <option> DKK</option>
+                            <option> GBP</option>
+                            <option> HKD</option>
+                            <option> HRK</option>
+                            <option> HUF</option>
+                            <option> IDR</option>
+                            <option> ILS</option>
+                            <option> INR</option>
+                            <option> ISK</option>
+                            <option> JPY</option>
+                            <option> KRW</option>
+                            <option> MXN</option>
+                            <option> MYR</option>
+                            <option> NOK</option>
+                            <option> NZD</option>
+                            <option> PHP</option>
+                            <option> PLN</option>
+                            <option> RON</option>
+                            <option> RUB</option>
+                            <option> SEK</option>
+                            <option> SGD</option>
+                            <option> THB</option>
+                            <option> TRY</option>
+                            <option> ZAR</option>
+                        </select>
+                    </label>
+                    <label>To currency:
+                        <select>
+                            <option> RUB</option>
+                            <option> AUD</option>
+                            <option> BGN</option>
+                            <option> BRL</option>
+                            <option> CAD</option>
+                            <option> CHF</option>
+                            <option> CNY</option>
+                            <option> CZK</option>
+                            <option> DKK</option>
+                            <option> GBP</option>
+                            <option> HKD</option>
+                            <option> HRK</option>
+                            <option> HUF</option>
+                            <option> IDR</option>
+                            <option> ILS</option>
+                            <option> INR</option>
+                            <option> ISK</option>
+                            <option> JPY</option>
+                            <option> KRW</option>
+                            <option> MXN</option>
+                            <option> MYR</option>
+                            <option> NOK</option>
+                            <option> NZD</option>
+                            <option> PHP</option>
+                            <option> PLN</option>
+                            <option> RON</option>
+                            <option> SEK</option>
+                            <option> SGD</option>
+                            <option> THB</option>
+                            <option> TRY</option>
+                            <option> USD</option>
+                            <option> ZAR</option>
+                        </select>
+                    </label>
                 </div>
             </div>
         </li>
@@ -41,7 +120,8 @@
                         <img src="img/gif_load.gif">
                     </div>
                 <div class="historical__rates-input">
-                    <p>Choose date:</p><input id="input__date" type="date">
+                    <p>Choose date:</p><input id="input__date" type="date"><br>
+                    <br>
                     <div>Exchange to EURO</div>
                 </div>
                 <div class="historical__rates-result"></div>

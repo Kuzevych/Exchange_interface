@@ -30,6 +30,21 @@ let deleteChilds = (parent,child) => {
 
 
 
+
+
+
+//Functional for 2nd tab
+const btn = document.getElementById('latest__btn');
+const latestRatesResult = document.querySelector('.latest__rates-result');
+const latestRatesUl = document.createElement('ul');
+latestRatesUl.className='latest__rates-ul';
+latestRatesResult.appendChild(latestRatesUl);
+btn.onclick = function(){
+    deleteChilds(latestRatesUl,'li');
+    createResponseList('https://api.exchangeratesapi.io/latest',latestRatesUl,li,'latest__result-li');
+};
+
+
 //Functional for 3st tab
 const inputDate = document.querySelector('#input__date');
 const resultDiv = document.querySelector('.historical__rates-result');
@@ -54,17 +69,3 @@ inputDate.onchange =function () {
     //     });
     createResponseList(`https://api.exchangeratesapi.io/${event.target.value}`,ul,li,'result-li');
 };
-
-
-//Functional for 2nd tab
-const btn = document.getElementById('latest__btn');
-const latestRatesResult = document.querySelector('.latest__rates-result');
-const latestRatesUl = document.createElement('ul');
-latestRatesUl.className='latest__rates-ul';
-latestRatesResult.appendChild(latestRatesUl);
-btn.onclick = function(){
-    deleteChilds(latestRatesUl,'li');
-    createResponseList('https://api.exchangeratesapi.io/latest',latestRatesUl,li,'latest__result-li');
-};
-
-
