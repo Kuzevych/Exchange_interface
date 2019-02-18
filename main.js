@@ -1,8 +1,9 @@
-const loadingBlock = document.querySelector('.loading');
+const loadingBlock = document.querySelectorAll('.loading');
 
 let createResponseList = (requestUrl, createdUl, newLi, classNewLi) =>{
-    // loadingBlock.style = 'display:block;';
-    // loadingBlock.style = 'backgroundColor:black;';
+    Object.keys(loadingBlock).forEach(item => {
+        loadingBlock[item].style='display:block;';
+    });
     fetch(requestUrl).then(response => {
         return response.json()
     })
@@ -12,6 +13,9 @@ let createResponseList = (requestUrl, createdUl, newLi, classNewLi) =>{
                 newLi.className = classNewLi;
                 newLi.textContent = (`${item} ${data.rates[item]}`);
                 createdUl.appendChild(newLi);
+            });
+            Object.keys(loadingBlock).forEach(item => {
+                loadingBlock[item].style='display:none;';
             });
         });
 };

@@ -31,3 +31,8 @@
     display: none;
     background-color: white;
 }
+
+.loading img {
+    margin-top: 220px;
+    margin-left: 115px;
+}
