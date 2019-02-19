@@ -1,15 +1,22 @@
 //Request function
 let valueToExchange = 1;
 const resultData = document.getElementById('calculator__result-data');
+
 const requestExchange = (date,base,symbols,converteValue) => {
+    Object.keys(loadingBlock).forEach(item => {
+        loadingBlock[item].style='display:block;';
+    });
     fetch(`https://api.exchangeratesapi.io/${date}?base=${base}`).then(response => {
         return response.json();
     })
         .then(data => {
             //console.log(data.rates);
             console.log(data.rates[symbols]);
-            resultData.textContent = converteValue * data.rates[symbols].toFixed(2);
-        })
+            resultData.textContent = converteValue * data.rates[symbols].toFixed(1);
+            Object.keys(loadingBlock).forEach(item => {
+                loadingBlock[item].style='display:none;';
+            });
+        });
 };
 
 
