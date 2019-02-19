@@ -2,9 +2,9 @@ const loadingBlock = document.querySelectorAll('.loading');
 
 
 //Request function
-let createResponseList = (requestUrl, createdUl, newLi, classNewLi) =>{
+let createResponseList = (requestUrl, createdUl, newLi, classNewLi) => {
     Object.keys(loadingBlock).forEach(item => {
-        loadingBlock[item].style='display:block;';
+        loadingBlock[item].style = 'display:block;';
     });
     fetch(requestUrl).then(response => {
         return response.json()
@@ -17,14 +17,14 @@ let createResponseList = (requestUrl, createdUl, newLi, classNewLi) =>{
                 createdUl.appendChild(newLi);
             });
             Object.keys(loadingBlock).forEach(item => {
-                loadingBlock[item].style='display:none;';
+                loadingBlock[item].style = 'display:none;';
             });
         });
 };
 
 
-let deleteChilds = (parent,child) => {
-    if ((parent.querySelectorAll(child).length)>0){
+let deleteChilds = (parent, child) => {
+    if ((parent.querySelectorAll(child).length) > 0) {
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild)
         }
@@ -36,11 +36,11 @@ let deleteChilds = (parent,child) => {
 const btn = document.getElementById('latest__btn');
 const latestRatesResult = document.querySelector('.latest__rates-result');
 const latestRatesUl = document.createElement('ul');
-latestRatesUl.className='latest__rates-ul';
+latestRatesUl.className = 'latest__rates-ul';
 latestRatesResult.appendChild(latestRatesUl);
-btn.onclick = function(){
-    deleteChilds(latestRatesUl,'li');
-    createResponseList('https://api.exchangeratesapi.io/latest',latestRatesUl,li,'latest__result-li');
+btn.onclick = function () {
+    deleteChilds(latestRatesUl, 'li');
+    createResponseList('https://api.exchangeratesapi.io/latest', latestRatesUl, li, 'latest__result-li');
 };
 
 
@@ -53,8 +53,8 @@ ul.className = 'result-list';
 resultDiv.appendChild(ul);
 const resultList = document.querySelector('.result-list');
 
-inputDate.onchange =function () {
-    deleteChilds(resultList,'li');
-    createResponseList(`https://api.exchangeratesapi.io/${event.target.value}`,ul,li,'result-li');
+inputDate.onchange = function () {
+    deleteChilds(resultList, 'li');
+    createResponseList(`https://api.exchangeratesapi.io/${event.target.value}`, ul, li, 'result-li');
 };
 
