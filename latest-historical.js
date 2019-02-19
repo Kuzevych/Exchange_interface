@@ -1,5 +1,7 @@
 const loadingBlock = document.querySelectorAll('.loading');
 
+
+//Request function
 let createResponseList = (requestUrl, createdUl, newLi, classNewLi) =>{
     Object.keys(loadingBlock).forEach(item => {
         loadingBlock[item].style='display:block;';
@@ -19,6 +21,7 @@ let createResponseList = (requestUrl, createdUl, newLi, classNewLi) =>{
             });
         });
 };
+
 
 let deleteChilds = (parent,child) => {
     if ((parent.querySelectorAll(child).length)>0){
@@ -52,17 +55,6 @@ const resultList = document.querySelector('.result-list');
 
 inputDate.onchange =function () {
     deleteChilds(resultList,'li');
-    // fetch(`https://api.exchangeratesapi.io/${event.target.value}`).then(response => {
-    //     return response.json()
-    // })
-    //     .then(data => {
-    //         Object.keys(data.rates).forEach((item) => {
-    //             const li = document.createElement('li');
-    //             li.className = 'result-li';
-    //             li.textContent = (`${item} ${data.rates[item]}`);
-    //             ul.appendChild(li);
-    //         });
-    //     });
     createResponseList(`https://api.exchangeratesapi.io/${event.target.value}`,ul,li,'result-li');
 };
 

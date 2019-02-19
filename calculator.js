@@ -1,5 +1,5 @@
 //Request function
-let valueToExchange = 1;
+
 const resultData = document.getElementById('calculator__result-data');
 
 const requestExchange = (date,base,symbols,converteValue) => {
@@ -10,17 +10,14 @@ const requestExchange = (date,base,symbols,converteValue) => {
         return response.json();
     })
         .then(data => {
-            //console.log(data.rates);
-            console.log(data.rates[symbols]);
-            resultData.textContent = converteValue * data.rates[symbols].toFixed(1);
+            resultData.textContent = converteValue * data.rates[symbols].toFixed(2);
             Object.keys(loadingBlock).forEach(item => {
                 loadingBlock[item].style='display:none;';
             });
         });
 };
 
-
-const calcRadio = document.querySelector('.calculator__input');
+//Functional to get dateForUrl
 const currentCourseRadio = document.getElementById('currentCourse');
 const courseForDateRadio = document.querySelector('#courseForDate');
 const dateBlock = document.querySelector('.date__block');
@@ -34,7 +31,6 @@ currentCourseRadio.onchange = () => {
     if (event.target.checked) {
         dateForUrl = `${date.getFullYear()}-${date.getMonth()}1-${date.getDate()}`;
         requestExchange(dateForUrl,currencyFromValue,currencyToValue,valueToExchange);
-        console.log(dateForUrl);
     }
 };
 
@@ -51,16 +47,14 @@ courseForDateRadio.onchange = () => {
 dateInput.onchange = () => {
     dateForUrl = event.target.value;
     requestExchange(dateForUrl,currencyFromValue,currencyToValue,valueToExchange);
-    console.log(dateForUrl);
 };
 
 
-
 // valueToExchange - This is the value we will convert in the future
+let valueToExchange = 1;
 const inputToExchange = document.querySelector('#valueToExchange');
 inputToExchange.onchange = () => {
     valueToExchange = event.target.value;
-    console.log(valueToExchange);
     requestExchange(dateForUrl,currencyFromValue,currencyToValue,valueToExchange);
 };
 
@@ -74,19 +68,13 @@ let currencyToValue = 'RUB';
 
 currencyFromOption.onchange = () => {
     currencyFromValue = event.target.value;
-
     requestExchange(dateForUrl,currencyFromValue,currencyToValue,valueToExchange);
-    console.log(currencyFromValue);
 };
 
 currencyToOption.onchange = () => {
     currencyToValue = event.target.value;
-
     requestExchange(dateForUrl,currencyFromValue,currencyToValue,valueToExchange);
-    console.log(currencyToValue);
 };
 
 
 
-
-//requestExchange(dateForUrl,currencyFromValue,currencyToValue,valueToExchange);
