@@ -17,14 +17,16 @@
                     <img src="img/gif_load.gif">
                 </div>
                 <div class="calculator__input">
-                        <label><input type="radio" name="choose" id="currentCourse" value="currentCourse">Current course</label><br>
-                        <label><input type="radio" name="choose" id="courseForDate" value="courseForDate">Course for date</label><br>
+                        <label><input type="radio" name="choose" id="currentCourse" checked>Current course</label><br>
+                        <label><input type="radio" name="choose" id="courseForDate" >Course for date</label>
+                        <div class="date__block"></div>
                         <br>
-                    Value<input type="number" id="valueToExchange"><br>
+                    Value<input type="number" id="valueToExchange" value=""><br>
                     <br>
                     <label>From currency:
-                        <select>
+                        <select id="currencyFrom">
                             <option> USD</option>
+                            <option> EUR</option>
                             <option> AUD</option>
                             <option> BGN</option>
                             <option> BRL</option>
@@ -59,7 +61,7 @@
                         </select>
                     </label>
                     <label>To currency:
-                        <select>
+                        <select id="currencyTo">
                             <option> RUB</option>
                             <option> AUD</option>
                             <option> BGN</option>
@@ -92,8 +94,12 @@
                             <option> TRY</option>
                             <option> USD</option>
                             <option> ZAR</option>
+                            <option> EUR</option>
                         </select>
                     </label>
+                </div>
+                <div class="calculator__result">
+                    <p id="calculator__result-data">0</p>
                 </div>
             </div>
         </li>
@@ -129,7 +135,7 @@
         </li>
     </ul>
 </div>
-<script src="calculator.js"></script>
 <script src="main.js"></script>
+<script src="calculator.js"></script>
 </body>
 </html>

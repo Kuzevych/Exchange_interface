@@ -29,10 +29,6 @@ let deleteChilds = (parent,child) => {
 };
 
 
-
-
-
-
 //Functional for 2nd tab
 const btn = document.getElementById('latest__btn');
 const latestRatesResult = document.querySelector('.latest__rates-result');
@@ -69,3 +65,4 @@ inputDate.onchange =function () {
     //     });
     createResponseList(`https://api.exchangeratesapi.io/${event.target.value}`,ul,li,'result-li');
 };
+

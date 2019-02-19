@@ -36,3 +36,27 @@
     margin-top: 220px;
     margin-left: 115px;
 }
+
+.date {
+    display: none;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator__result {
+    left: 130px;
+    top: 165px;
+    position: absolute;
+    border: 1px solid black;
+    width: 118px;
+    height: 80px;
+}
+
+.calculator__result * {
+    text-align: center;
+    font-family: Arial;
+    font-size: 24px;
+}
